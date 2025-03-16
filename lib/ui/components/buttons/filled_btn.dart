@@ -58,7 +58,7 @@ class FilledBtn extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'AvenirLTPro',
                         fontSize: fontSize,
-                        height: 1.45,
+                        height: 1.35,
                         color: textColor,
                         fontWeight:
                             fontSize == 18 ? FontWeight.w500 : FontWeight.w700,
@@ -74,7 +74,7 @@ class FilledBtn extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'AvenirLTPro',
                     fontSize: fontSize,
-                    height: 1.45,
+                    height: 1.35,
                     color: textColor,
                     fontWeight:
                         fontSize == 18 ? FontWeight.w500 : FontWeight.w700,
@@ -133,7 +133,7 @@ class FilledBtnSmall extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'AvenirLTPro',
                         fontSize: 14,
-                        height: 1.45,
+                        height: 1.35,
                         color: textColor,
                         fontWeight: FontWeight.w600,
                         letterSpacing: -.3,
@@ -148,7 +148,7 @@ class FilledBtnSmall extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'AvenirLTPro',
                     fontSize: 14,
-                    height: 1.45,
+                    height: 1.35,
                     color: textColor,
                     fontWeight: FontWeight.w600,
                     letterSpacing: -.3,
@@ -211,7 +211,7 @@ class FilledBtnBig extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'AvenirLTPro',
                         fontSize: fontSize,
-                        height: 1.45,
+                        height: 1.35,
                         color: textColor,
                         fontWeight:
                             fontSize == 18 ? FontWeight.w500 : FontWeight.w700,
@@ -227,7 +227,7 @@ class FilledBtnBig extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'AvenirLTPro',
                     fontSize: fontSize,
-                    height: 1.45,
+                    height: 1.35,
                     color: textColor,
                     fontWeight:
                         fontSize == 18 ? FontWeight.w500 : FontWeight.w700,

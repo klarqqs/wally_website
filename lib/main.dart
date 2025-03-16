@@ -1,3 +1,4 @@
+import 'package:flutter_svg/svg.dart';
 import 'package:wally_website/about.dart';
 import 'package:wally_website/ui/components/buttons/filled_btn.dart';
 import 'package:flutter/material.dart';
@@ -105,42 +106,143 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: currentTabBackgroundColor,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AboutScreen()),
-                  );
-                },
-                child: RichText(
-                  text: TextSpan(
-                    text: 'About Us',
-                    style: TextStyle(
-                      fontFamily: 'AvenirLTPro',
-                      height: 1.35,
-                      letterSpacing: -.4,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // TextButton(
+                //   style: TextButton.styleFrom(
+                //     backgroundColor: currentTabBackgroundColor,
+                //   ),
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => AboutScreen()),
+                //     );
+                //   },
+                //   child: RichText(
+                //     text: TextSpan(
+                //       text: 'Features',
+                //       style: TextStyle(
+                //         fontFamily: 'AvenirLTPro',
+                //         height: 1.35,
+                //         letterSpacing: -.4,
+                //         fontWeight: FontWeight.w600,
+                //         fontSize: 14,
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // const SizedBox(width: 24),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: currentTabBackgroundColor,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutScreen()),
+                    );
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'About',
+                      style: TextStyle(
+                        fontFamily: 'AvenirLTPro',
+                        height: 1.35,
+                        letterSpacing: -.4,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+                //       const SizedBox(width: 24),
+                //       TextButton(
+                //         style: TextButton.styleFrom(
+                //           backgroundColor: currentTabBackgroundColor,
+                //         ),
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(builder: (context) => AboutScreen()),
+                //           );
+                //         },
+                //         child: RichText(
+                //           text: TextSpan(
+                //             text: 'FAQs',
+                //             style: TextStyle(
+                //               fontFamily: 'AvenirLTPro',
+                //               height: 1.35,
+                //               letterSpacing: -.4,
+                //               fontWeight: FontWeight.w600,
+                //               fontSize: 14,
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(width: 24),
+                //       TextButton(
+                //         style: TextButton.styleFrom(
+                //           backgroundColor: currentTabBackgroundColor,
+                //         ),
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(builder: (context) => AboutScreen()),
+                //           );
+                //         },
+                //         child: RichText(
+                //           text: TextSpan(
+                //             text: 'Contact',
+                //             style: TextStyle(
+                //               fontFamily: 'AvenirLTPro',
+                //               height: 1.35,
+                //               letterSpacing: -.4,
+                //               fontWeight: FontWeight.w600,
+                //               fontSize: 14,
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+              ],
+            ),
           ),
-          FilledBtnSmall(
-            onPressed: () {},
-            text: "Try it out",
-            hasIcon: true,
-            textColor: Colors.white,
-            backgroundColor: Theme.of(context).textTheme.bodyLarge!.color,
-            icon: "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+          Expanded(
+            child: Center(
+              child: InkWell(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
+                hoverColor: Colors.transparent,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                child: SvgPicture.asset(
+                  "assets/svgs/logo_black.svg",
+                  height: 48,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FilledBtnSmall(
+                  onPressed: () {},
+                  text: "Get ready – Coming soon!",
+                  hasIcon: true,
+                  textColor: Colors.white,
+                  backgroundColor: Theme.of(context).textTheme.bodyLarge!.color,
+                  icon: "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -177,11 +279,12 @@ class HeroSection extends StatelessWidget {
           ),
           const SizedBox(height: 72),
           Text(
-            'Wally lets you pay via WhatsApp using your\nUSDC wallet address and earn rewards',
+            'Pay anyone instantly on WhatsApp with your\nUSDC wallet – no new apps, just rewards',
+            // 'Wally lets you pay via WhatsApp using your\nUSDC wallet address and earn rewards',
             style: TextStyle(
               fontFamily: 'AvenirLTPro',
               fontSize: 32,
-              height: 1.45,
+              height: 1.35,
               color: Theme.of(
                 context,
               ).textTheme.bodyLarge!.color!.withOpacity(.75),
@@ -197,7 +300,7 @@ class HeroSection extends StatelessWidget {
               SizedBox(
                 child: FilledBtn(
                   onPressed: () {},
-                  text: "Try it out",
+                  text: "Get ready – Coming soon!",
                   hasIcon: true,
                   textColor: Colors.white,
                   backgroundColor: Theme.of(context).textTheme.bodyLarge!.color,
@@ -224,227 +327,318 @@ class FeatureSection extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 32),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(72),
-              color: Color(0xffE8D1FA),
-            ),
-            child: Row(
+          SizedBox(
+            child: Stack(
+              alignment: AlignmentDirectional.bottomCenter,
               children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(80, 96, 0, 96),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                          textAlign: TextAlign.start,
-                          text: TextSpan(
-                            text:
-                                "Pay or send money to anyone from your WhatsApp",
-                            style: TextStyle(
-                              fontFamily: 'DegularDisplay',
-                              fontSize: 60,
-                              height: 1,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 2.5,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 24),
-                        Text(
-                          "Share a photo or simply speak - Wally transforms your text, image or voice notes into seamless payments.",
-                          style: TextStyle(
-                            fontFamily: 'AvenirLTPro',
-                            fontSize: 24,
-                            height: 1.45,
-                            color: Theme.of(
-                              context,
-                            ).textTheme.bodyLarge!.color!.withOpacity(.75),
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: -.5,
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                        const SizedBox(height: 72),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              child: FilledBtn(
-                                onPressed: () {},
-                                text: "Get started now",
-                                hasIcon: true,
-                                textColor: Colors.white,
-                                fontSize: 18,
-                                backgroundColor:
-                                    Theme.of(
-                                      context,
-                                    ).textTheme.bodyLarge!.color,
-                                icon:
-                                    "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(72),
+                    color: Color(0xffE8D1FA),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(80, 96, 48, 96),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                textAlign: TextAlign.start,
+                                text: TextSpan(
+                                  text:
+                                      "Pay or send money to anyone from your WhatsApp",
+                                  style: TextStyle(
+                                    fontFamily: 'DegularDisplay',
+                                    fontSize: 60,
+                                    height: 1,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 2.5,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(height: 24),
+                              Text(
+                                "Share a photo or simply speak - Wally transforms your text, image or voice notes into seamless payments.",
+                                style: TextStyle(
+                                  fontFamily: 'AvenirLTPro',
+                                  fontSize: 24,
+                                  height: 1.35,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .color!
+                                      .withOpacity(.75),
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: -.5,
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                              const SizedBox(height: 72),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    child: FilledBtn(
+                                      onPressed: () {},
+                                      text: "Get started now",
+                                      hasIcon: true,
+                                      textColor: Colors.white,
+                                      fontSize: 18,
+                                      backgroundColor:
+                                          Theme.of(
+                                            context,
+                                          ).textTheme.bodyLarge!.color,
+                                      icon:
+                                          "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                      Expanded(child: const SizedBox()),
+                    ],
                   ),
                 ),
-
-                Expanded(child: const SizedBox()),
-              ],
-            ),
-          ),
-          const SizedBox(height: 48),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(72),
-              color: Color(0xffFFDFCC),
-            ),
-            child: Row(
-              children: [
-                Expanded(child: const SizedBox()),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 96, 80, 96),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                          textAlign: TextAlign.start,
-                          text: TextSpan(
-                            text: "Use your existing non-custodian wallets",
-                            style: TextStyle(
-                              fontFamily: 'DegularDisplay',
-                              fontSize: 60,
-                              height: 1,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 2.5,
-                            ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(72),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(child: const SizedBox()),
+                      const SizedBox(width: 96),
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(72),
+                          child: Image.asset(
+                            "assets/images/payment-demo.png",
+                            fit: BoxFit.contain,
                           ),
                         ),
-                        const SizedBox(height: 24),
-                        Text(
-                          "No new wallets needed - Wally uses your existing non-custodian wallets to process your transactions effortlessly.",
-                          style: TextStyle(
-                            fontFamily: 'AvenirLTPro',
-                            fontSize: 24,
-                            height: 1.45,
-                            color: Theme.of(
-                              context,
-                            ).textTheme.bodyLarge!.color!.withOpacity(.75),
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: -.5,
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                        const SizedBox(height: 72),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              child: FilledBtn(
-                                onPressed: () {},
-                                text: "Get started now",
-                                hasIcon: true,
-                                textColor: Colors.white,
-                                fontSize: 18,
-                                backgroundColor:
-                                    Theme.of(
-                                      context,
-                                    ).textTheme.bodyLarge!.color,
-                                icon:
-                                    "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 48),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(72),
-              color: Color(0xffCCFFF2),
-            ),
-            child: Row(
+          SizedBox(
+            child: Stack(
+              alignment: AlignmentDirectional.bottomCenter,
               children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(80, 96, 0, 96),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                          textAlign: TextAlign.start,
-                          text: TextSpan(
-                            text: "Works with forwarded messages",
-                            style: TextStyle(
-                              fontFamily: 'DegularDisplay',
-                              fontSize: 60,
-                              height: 1,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 2.5,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 24),
-                        Text(
-                          "Wally interprets and processes crypto transfers from forwarded messages with crypto details - no typing needed.",
-                          style: TextStyle(
-                            fontFamily: 'AvenirLTPro',
-                            fontSize: 24,
-                            height: 1.45,
-                            color: Theme.of(
-                              context,
-                            ).textTheme.bodyLarge!.color!.withOpacity(.75),
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: -.5,
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                        const SizedBox(height: 72),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              child: FilledBtn(
-                                onPressed: () {},
-                                text: "Get started now",
-                                hasIcon: true,
-                                textColor: Colors.white,
-                                fontSize: 18,
-                                backgroundColor:
-                                    Theme.of(
-                                      context,
-                                    ).textTheme.bodyLarge!.color,
-                                icon:
-                                    "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(72),
+                    color: Color(0xffFFDFCC),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(child: const SizedBox()),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 96, 80, 96),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                textAlign: TextAlign.start,
+                                text: TextSpan(
+                                  text:
+                                      "Use your existing non-custodian wallets",
+                                  style: TextStyle(
+                                    fontFamily: 'DegularDisplay',
+                                    fontSize: 60,
+                                    height: 1,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 2.5,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(height: 24),
+                              Text(
+                                "No new wallets needed - Wally uses your existing non-custodian wallets to process your transactions effortlessly.",
+                                style: TextStyle(
+                                  fontFamily: 'AvenirLTPro',
+                                  fontSize: 24,
+                                  height: 1.35,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .color!
+                                      .withOpacity(.75),
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: -.5,
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                              const SizedBox(height: 72),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    child: FilledBtn(
+                                      onPressed: () {},
+                                      text: "Get started now",
+                                      hasIcon: true,
+                                      textColor: Colors.white,
+                                      fontSize: 18,
+                                      backgroundColor:
+                                          Theme.of(
+                                            context,
+                                          ).textTheme.bodyLarge!.color,
+                                      icon:
+                                          "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-
-                Expanded(child: const SizedBox()),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(72),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(72),
+                          child: Image.asset(
+                            "assets/images/banks-demo.png",
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 96),
+                      Expanded(child: const SizedBox()),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+
+          const SizedBox(height: 48),
+          SizedBox(
+            child: Stack(
+              alignment: AlignmentDirectional.bottomCenter,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(72),
+                    color: Color(0xffCCFFF2),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(80, 96, 48, 96),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                textAlign: TextAlign.start,
+                                text: TextSpan(
+                                  text: "Works with forwarded messages",
+                                  style: TextStyle(
+                                    fontFamily: 'DegularDisplay',
+                                    fontSize: 60,
+                                    height: 1,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 2.5,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 24),
+                              Text(
+                                "Wally interprets and processes crypto transfers from forwarded messages with crypto details - no typing needed.",
+                                style: TextStyle(
+                                  fontFamily: 'AvenirLTPro',
+                                  fontSize: 24,
+                                  height: 1.35,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .color!
+                                      .withOpacity(.75),
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: -.5,
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                              const SizedBox(height: 72),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    child: FilledBtn(
+                                      onPressed: () {},
+                                      text: "Get started now",
+                                      hasIcon: true,
+                                      textColor: Colors.white,
+                                      fontSize: 18,
+                                      backgroundColor:
+                                          Theme.of(
+                                            context,
+                                          ).textTheme.bodyLarge!.color,
+                                      icon:
+                                          "assets/svgs/whatsapp-social-media-svgrepo-com.svg",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(child: const SizedBox()),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(72),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(child: const SizedBox()),
+                      const SizedBox(width: 96),
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(72),
+                          child: Image.asset(
+                            "assets/images/forwarded-demo.png",
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           const SizedBox(height: 126),
         ],
       ),
@@ -656,7 +850,12 @@ class FAQSection extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 72 + 48),
+                    const SizedBox(height: 72),
+                    Image.asset(
+                      "assets/images/verified-demo.png",
+                      fit: BoxFit.contain,
+                      width: 1280 * .5,
+                    ),
                   ],
                 ),
               ),
@@ -705,7 +904,7 @@ class FAQSection extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'AvenirLTPro',
                                 fontSize: 24,
-                                height: 1.45,
+                                height: 1.35,
                                 color: Theme.of(
                                   context,
                                 ).textTheme.bodyLarge!.color!.withOpacity(.75),
@@ -755,7 +954,7 @@ class FAQSection extends StatelessWidget {
                             textAlign: TextAlign.center,
                             text: TextSpan(
                               text:
-                                  "Data is encrypted at rest and in transit, with backup systems ensuring protection and continuity during contingencies, including WhatsApp service interruptions.",
+                                  "With over 2 billion WhatsApp users, Wally turns a familiar chat app into a powerful payment tool.",
                               style: TextStyle(
                                 fontFamily: 'DegularDisplay',
                                 fontSize: 64,
@@ -764,6 +963,21 @@ class FAQSection extends StatelessWidget {
                                 letterSpacing: 2.5,
                               ),
                             ),
+                          ),
+                          const SizedBox(height: 48),
+                          Text(
+                            "All data is encrypted at rest and in transit. In case of contingencies, our backup\nsystems ensure data protection and operational continuity, even during WhatsApp\nservice interruptions.",
+                            style: TextStyle(
+                              fontFamily: 'AvenirLTPro',
+                              fontSize: 24,
+                              height: 1.35,
+                              color: Theme.of(
+                                context,
+                              ).textTheme.bodyLarge!.color!.withOpacity(.75),
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: -.5,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 96),
                           TextButton(
@@ -794,7 +1008,7 @@ class FAQSection extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'DegularDisplay',
                                     fontSize: 24,
-                                    height: 1.45,
+                                    height: 1.35,
                                     color:
                                         Theme.of(
                                           context,
@@ -867,7 +1081,6 @@ class SignUpSection extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 const SizedBox(height: 64),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -875,7 +1088,7 @@ class SignUpSection extends StatelessWidget {
                     SizedBox(
                       child: FilledBtn(
                         onPressed: () {},
-                        text: "Try it out",
+                        text: "Get ready – Coming soon!",
                         borderWidth: 2.5,
                         hasIcon: true,
                         textColor: Colors.white,
@@ -929,32 +1142,25 @@ class FooterSection extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              children: [
-                                Text(
-                                  "Wally",
-                                  style: TextStyle(
-                                    fontFamily: 'DegularDisplay',
-                                    fontSize: 64,
-                                    height: 1,
-                                    fontWeight: FontWeight.w700,
-                                    
-                                    letterSpacing: 2.5,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              splashFactory: NoSplash.splashFactory,
+                              hoverColor: Colors.transparent,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomePage(),
                                   ),
-                                ),
-                                const SizedBox(width: 5),
-                                RichText(
-                                  text: TextSpan(
-                                    text: "",
-                                    style: GoogleFonts.spaceGrotesk(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 24,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                                );
+                              },
+                              child: SvgPicture.asset(
+                                "assets/svgs/logo_white.svg",
+                                height: 100,
+                              ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 36),
                             Text(
                               'A rewarding way to make payments on WhatsApp - Bank transfers, pay bills and more, all for free.',
                               style: TextStyle(
@@ -1005,7 +1211,7 @@ class FooterSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "2024 © A Dayfi Company",
+                      "2025 © Wally",
                       style: TextStyle(
                         fontFamily: 'AvenirLTPro',
                         fontSize: 20,
@@ -1045,7 +1251,7 @@ class FooterColumn extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'DegularDisplay',
               fontSize: 24,
-              height: 1.45,
+              height: 1.35,
               color: Colors.white,
               fontWeight: FontWeight.w700,
               letterSpacing: 1,

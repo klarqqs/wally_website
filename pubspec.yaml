@@ -67,6 +67,7 @@ flutter:
   assets:
     - assets/svgs/
     - assets/fonts/
+    - assets/images/
 
   fonts:
     - family: DegularDisplay
