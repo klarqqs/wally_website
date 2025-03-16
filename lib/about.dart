@@ -1,7 +1,6 @@
 import 'package:wally_website/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -12,7 +11,7 @@ class AboutScreen extends StatelessWidget {
 
 *Payments, as easy as a chat.*  
 
-Wally is a groundbreaking fintech solution that transforms WhatsApp into a seamless payment platform. With over 2 billion users already chatting on WhatsApp, Wally makes sending money as simple as sending a message. Powered by blockchain technology and a unique rewards system, we’re redefining daily finance by bringing wallets into the world’s most popular chat app.  
+Wally is a trailblazing fintech solution from A DayFi Company, reimagining how people send and receive money by embedding seamless payments into WhatsApp. With over 2 billion users already on the platform, Wally transforms a familiar chat app into a powerful financial tool, making transactions as easy as sending a message. Powered by cutting-edge blockchain technology and a rewards-driven approach, Wally is here to redefine daily finance for everyone, everywhere.
 
 ## Company Overview
 

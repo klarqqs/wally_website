@@ -1211,7 +1211,7 @@ class FooterSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "2025 © Wally",
+                      "2025 © A Dayfi Company",
                       style: TextStyle(
                         fontFamily: 'AvenirLTPro',
                         fontSize: 20,
