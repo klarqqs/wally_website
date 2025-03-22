@@ -1128,7 +1128,7 @@ class FooterSection extends StatelessWidget {
         child: SizedBox(
           width: 1280,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 120, 0, 120),
+            padding: const EdgeInsets.fromLTRB(80, 120, 80, 120),
             child: Column(
               children: [
                 Row(
