@@ -350,7 +350,7 @@ class FeatureSection extends StatelessWidget {
                                 textAlign: TextAlign.start,
                                 text: TextSpan(
                                   text:
-                                      "Pay or send money to anyone from your WhatsApp",
+                                      "Send money to anyone from your WhatsApp",
                                   style: TextStyle(
                                     fontFamily: 'DegularDisplay',
                                     fontSize: 60,
@@ -455,7 +455,7 @@ class FeatureSection extends StatelessWidget {
                                 textAlign: TextAlign.start,
                                 text: TextSpan(
                                   text:
-                                      "Use your existing non-custodian wallets",
+                                      "Use your\nexisting\nwallets",
                                   style: TextStyle(
                                     fontFamily: 'DegularDisplay',
                                     fontSize: 60,
